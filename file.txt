@@ -1,0 +1,37 @@
+a = """                         __,,,,_
+          _ __..-;''`--/'/ /.',-`-.
+      (`/' ` |  \ \ \\ / / / / .-'/`,_
+     /'`\ \   |  \ | \| // // / -.,/_,'-,
+    /<7' ;  \ \  | ; ||/ /| | \/    |`-/,/-.,_,/')
+   /  _.-, `,-\,__|  _-| / \ \/|_/  |    '-/.;.\'
+   `-`  f/ ;      / __/ \__ `/ |__/ |
+        `-'      |  -| =|\_  \  |-' |
+              __/   /_..-' `  ),'  //
+             ((__.-'((___..-'' \__.' TERMUX LOGIN
+"""
+import os
+data = open('data.txt').read().splitlines()
+print("\033[95m" + a + "\033[0m")
+
+def username():
+	while True:
+		try:
+			u = str(input("[?] Username: "))
+			if u == data[0]:
+				pw(u)
+		except KeyboardInterrupt:
+			pass
+		
+def pw(u):
+	while True:
+		p = str(input("[?] Password: "))
+		if p == data[1]:
+			os.system('clear')
+			print("Welcome! \033[92m" + u + "\033[0m\n")
+			exit()
+
+username()
+
+
+		
+
